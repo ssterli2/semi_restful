@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Edit</title>
+  </head>
+  <body>
+    <h1>Edit Product {{id}}</h1>
+    <form action="/update/{{id}}" method="post">
+      {% csrf_token %}
+      Name: <input type='text' name='name' value="{{name}}">
+      Description:<input type='text' name='description' value="{{description}}">
+      Price: <input type='text' name='price' value="{{price}}">
+      <input type="submit" value="Update">
+    </form>
+    <form action="/back" method="post">
+      {% csrf_token %}
+      <input type="submit" value="Go Back">
+    </form>
+    <form action="/show/{{id}}" method="post">
+      {% csrf_token %}
+      <input type="submit" value="Show">
+    </form>
+  </body>
+</html>
